@@ -19,28 +19,30 @@ className.split('-').forEach(word => {
 const writeFile = (className, fileName, filePath) => {
   let content = 
   `<template lang="html">
+  <div class="${className}">
     ${fileName}
-  </template>
-  <script>
-  import { showMessage } from 'utils/message'
-  import { TablePagination, ContentBox } from 'views/console'
-  export default {
-    name: '${fileName}',
-    components: {
-      TablePagination, ContentBox
-    },
-    data () {
-      return {
-      }
+  </div>
+</template>
+<script>
+import { showMessage } from 'utils/message'
+import { TablePagination, ContentBox } from 'views/console'
+export default {
+  name: '${fileName}',
+  components: {
+    TablePagination, ContentBox
+  },
+  data () {
+    return {
     }
   }
-  </script>
-  <style lang="css">
-  .${className} {
+}
+</script>
+<style lang="css">
+.${className} {
 
-  }
-  </style>
-  `
+}
+</style>
+`
   
   let writeStream = fs.createWriteStream(`${path}/${filePath}/${fileName}.vue`, defaults)
   writeStream.write(content, 'utf-8', () => {
