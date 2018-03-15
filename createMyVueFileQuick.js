@@ -23,6 +23,8 @@ let content =
       <div slot="${className}">
         ${fileName}
         <el-table :data="${fileName}.tableData" v-loading="${fileName}.tableDataLoading" border>
+          <el-table-column prop="" label="1" width="100">
+          </el-table-column>
         </el-table>
         <table-pagination :handleCurrentChange="get${fileName}" :pageConfig="${fileName}.pageConfig"></table-pagination>
       </div>
