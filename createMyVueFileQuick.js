@@ -32,7 +32,7 @@ let content =
 <script>
 import { showMessage } from 'utils/message'
 import { TablePagination, ContentBox } from 'views/console'
-import { get${fileName}, channelTest, channelMod } from ''
+import { get${fileName} } from ''
 export default {
   name: '${fileName}',
   components: {
@@ -47,6 +47,7 @@ export default {
         }
       ],
       ${fileName}: {
+        searchData: {},
         tableData: [],
         tableDataLoading: true,
         pageConfig: {
