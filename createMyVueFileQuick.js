@@ -20,7 +20,7 @@ let content =
 `<template lang="html">
   <div class="${className}">
     <content-box :titles="titles">
-      <div slot="monitor-contact">
+      <div slot="${className}">
         ${fileName}
         <el-table :data="${fileName}.tableData" v-loading="${fileName}.tableDataLoading" border>
         </el-table>
